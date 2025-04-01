@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+.navbar {
+  background: linear-gradient(90deg, red, purple);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: gradientAnimation 5s linear infinite;
+  background-size: 200% 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.moon-logo {
+  display: flex;
+  align-items: center;
+}
+
+.moon-logo i {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.moon-text {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.menu-icon i {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  background: linear-gradient(90deg, red, purple);
+  animation: gradientAnimation 5s linear infinite;
+  justify-content: space-between;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.menu.show {
+  display: flex;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.menu-item i {
+  margin-right: 10px;
+}
+
+.meteor-shower {
+  position: absolute;
+  top: 100px;
+  width: 600px;
+  height: 200px;
+  overflow: hidden;
+  display: none;
+}
+
+.meteor {
+  position: absolute;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  animation: meteorBounce 5s linear infinite alternate; /* Добавлено: анимация отскока */
+  white-space: nowrap; /* Добавляем чтобы текст не переносился */
+}
+
+@keyframes meteorBounce {
+  0% {
+    transform: translateX(120vw); /* Начальное положение справа */
+  }
+  100% {
+    transform: translateX(-100px); /* Конечное положение слева */
+  }
+}
+
+.meteor-text {
+  margin-left: 10px;
+}
