@@ -25,7 +25,7 @@ var
     weapon_name: 'MP9',
     skin_name:   'Сектор приз на барабане',
     rarity:      'milspec',
-    steam_image: 'https://x0.at/WcLi.jpg'
+    steam_image: 'MP9.png'
   },
   WEAPON_ACTORS_ATTRS = [
     {
