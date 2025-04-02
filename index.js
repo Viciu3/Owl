@@ -25,7 +25,7 @@ var
     weapon_name: 'MP9',
     skin_name:   'Сектор приз на барабане',
     rarity:      'milspec',
-    steam_image: 'http://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLO_JAlf0Ob3czRY49KJl4mfnu3xPYTdn2xZ_Pp9i_vG8ML22we18ko6Nm71JdDGdwQ7Yl3S-FXrxu27h8fqtZybwHAy6Scl43zagVXp1pQaPStA'
+    steam_image: 'https://x0.at/WcLi.jpg'
   },
   WEAPON_ACTORS_ATTRS = [
     {
