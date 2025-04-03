@@ -59,32 +59,74 @@ var
 
 function main() {
   var
-    // куда монтировать рулетку
     el_parent = document.getElementById('mysite-roulette-container'),
-    roulette; // Объявляем переменную roulette, но не инициализируем её
+    restartButton = document.getElementById('restart-roulette'),
+    hideButton = document.getElementById('hide-roulette'),
+    videoBackground = document.getElementById('background-video'),
+    meContent = document.getElementById('me-content'),
+    roulette;
 
-  // Добавляем обработчик событий для кнопки "Open"
-  document.getElementById('restart-roulette').addEventListener('click', function() {
-    // Воспроизводим звук
-    var audio = new Audio('sound.mp3'); // Замените sound.mp3 на путь к вашему звуковому файлу
-    audio.play();
+  if (restartButton) {
+    restartButton.addEventListener('click', function() {
+      var audio = new Audio('sound.mp3');
+      audio.play();
 
-    // Удаляем старую рулетку (если она есть)
-    el_parent.innerHTML = '';
-    // Создаем новую рулетку
-    roulette = new EvRoulette({
-      weapon_prize_attrs:  WEAPON_PRIZE_ATTRS,
-      weapon_actors_attrs: WEAPON_ACTORS_ATTRS,
-      el_parent:           el_parent,
-      beforeparty:         function () {
-        console.log('Поехали!');
-      },
-      afterparty:          function () {
-        console.log('Ой, всё');
+      el_parent.innerHTML = '';
+      roulette = new EvRoulette({
+        weapon_prize_attrs:  WEAPON_PRIZE_ATTRS,
+        weapon_actors_attrs: WEAPON_ACTORS_ATTRS,
+        el_parent:           el_parent,
+        beforeparty:         function () {
+          console.log('Поехали!');
+        },
+        afterparty:          function () {
+          console.log('Ой, всё');
+        }
+      });
+      roulette.start();
+    });
+  }
+
+  if (hideButton) {
+    hideButton.addEventListener('click', function() {
+      if (el_parent.style.display === 'none' || el_parent.style.display === '') {
+        el_parent.style.display = 'block';
+      } else {
+        el_parent.style.display = 'none';
       }
     });
-    // Запускаем новую рулетку
-    roulette.start();
+  }
+
+  // Обработка кликов по пунктам меню
+  document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', function() {
+      const page = this.getAttribute('data-page');
+      if (page === 'home') {
+        document.body.classList.add('home-page');
+        document.body.style.backgroundColor = 'transparent';
+        if (videoBackground) videoBackground.style.display = 'block';
+        if (el_parent) el_parent.style.display = 'block';
+        if (restartButton) restartButton.style.display = 'block';
+        if (hideButton) hideButton.style.display = 'block';
+        if (meContent) meContent.style.display = 'none';
+      } else if (page === 'me') {
+        document.body.classList.remove('home-page');
+        document.body.style.backgroundColor = 'black';
+        if (videoBackground) videoBackground.style.display = 'none';
+        if (el_parent) el_parent.style.display = 'none';
+        if (restartButton) restartButton.style.display = 'none';
+        if (hideButton) hideButton.style.display = 'none';
+        if (meContent) meContent.style.display = 'block';
+      } else {
+        document.body.classList.remove('home-page');
+        document.body.style.backgroundColor = 'black';
+        if (videoBackground) videoBackground.style.display = 'none';
+        if (el_parent) el_parent.style.display = 'none';
+        if (restartButton) restartButton.style.display = 'none';
+        if (hideButton) hideButton.style.display = 'none';
+        if (meContent) meContent.style.display = 'none';
+      }
+    });
   });
 }
 

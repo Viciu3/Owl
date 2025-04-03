@@ -24,3 +24,30 @@
     background-position: 0% 50%;
   }
 }
+
+#hide-roulette {
+  display: block;
+  margin: -51px auto 1px 75px;
+  padding: 10px; /* Увеличиваем внутренний отступ */
+  background: linear-gradient(90deg, red, purple);
+  background-size: 200% 100%;
+  color: white;
+  border: 3px solid;
+  border-image: linear-gradient(90deg, red, purple) 1;
+  border-image-slice: 1;
+  border-radius: 30px 30px;
+  cursor: pointer;
+  animation: gradientAnimation 5s linear infinite;
+  font-size: 16px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
