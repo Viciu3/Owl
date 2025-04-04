@@ -1,17 +1,22 @@
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@layer normalize, base, demo;
+
+@layer demo {
 body {
   margin: 0;
-  background-color: transparent; /* Изначально прозрачный фон */
+  background-color: transparent;
   color: white;
 }
 
 #background-video {
-  position: fixed; /* Фиксированное положение */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Видео заполняет весь экран */
-  z-index: -1; /* Помещаем видео за другие элементы */
+  object-fit: cover;
+  z-index: -1;
 }
 
 .navbar {
@@ -109,23 +114,25 @@ body {
   height: 200px;
   overflow: hidden;
   display: none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .meteor {
-  position: absolute;
-  font-size: 1.5em;
+  font-size: 4vw;
   display: flex;
   align-items: center;
-  animation: meteorBounce 5s linear infinite alternate; /* Добавлено: анимация отскока */
-  white-space: nowrap; /* Добавляем чтобы текст не переносился */
+  animation: meteorBounce 5s linear infinite alternate;
+  white-space: nowrap;
 }
 
 @keyframes meteorBounce {
   0% {
-    transform: translateX(120vw); /* Начальное положение справа */
+    transform: translateX(120vw);
   }
   100% {
-    transform: translateX(-100px); /* Конечное положение слева */
+    transform: translateX(-100px);
   }
 }
 
