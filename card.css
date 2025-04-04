@@ -3,14 +3,18 @@
 @layer normalize, base, demo;
 
 @layer demo {
-  
   #me-content {
     display: flex;
     justify-content: center;
-    align-items: center; /* Центрируем по вертикали */
+    align-items: center;
     min-height: 100vh;
     background-color: black;
-    margin: 0; /* Убираем margin */
+    margin: 0;
+    position: fixed;
+    top: -300px;
+    left: -200px;
+    width: 100%;
+    z-index: 10;
   }
 
   .card {
@@ -18,7 +22,8 @@
     animation: gradientAnimation 10s linear infinite;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
-    width: 300px;
+    width: 90%; /* Относительная ширина */
+    max-width: 300px; /* Максимальная ширина */
     padding: 20px;
     text-align: center;
   }
@@ -31,20 +36,22 @@
       background-position: 0% 50%;
     }
   }
-  
+
   .avatar-container {
     margin-bottom: 20px;
   }
 
   .avatar {
-    width: 100px;
-    height: 100px;
+    width: 30vw; /* Относительные единицы */
+    max-width: 100px;
+    height: 30vw;
+    max-height: 100px;
     border-radius: 50%;
     object-fit: cover;
   }
 
   .card-content h2 {
-    font-size: 24px;
+    font-size: 6vw; /* Относительные единицы */
     margin-bottom: 10px;
     color: white;
   }
@@ -55,6 +62,7 @@
   }
 
   .card-content li {
+    font-size: 4vw; /* Относительные единицы */
     margin-bottom: 8px;
     color: white;
   }
